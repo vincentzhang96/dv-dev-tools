@@ -108,7 +108,7 @@ export default Vue.extend({
 
             let f = 0;
             for (let i = 0; i < mant.length; ++i) {
-                f += parseInt(mant[i]) ? Math.pow(2, exp) : 0;
+                f += parseInt(mant[i], 10) ? Math.pow(2, exp) : 0;
                 --exp;
             }
 
