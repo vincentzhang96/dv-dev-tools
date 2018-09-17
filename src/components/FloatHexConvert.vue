@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 
 export interface IFloatHexData {
     input: string;
@@ -39,7 +39,7 @@ export interface IFloatHexData {
 }
 
 export default Vue.extend({
-    name: 'float-hex-convert',
+    name: "float-hex-convert",
     data(): IFloatHexData {
         return {
             input: "",
@@ -115,7 +115,7 @@ export default Vue.extend({
             return f * sign;
         },
         toHex(value: number, littleEndian: boolean): string {
-            const toHex = (i: number) => ('00' + i.toString(16)).slice(-2);
+            const toHex = (i: number) => ("00" + i.toString(16)).slice(-2);
             let view = new DataView(new ArrayBuffer(4));
             view.setFloat32(0, value);
 

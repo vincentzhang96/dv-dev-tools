@@ -24,7 +24,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 
 export interface IColorizerData {
 
@@ -39,7 +39,7 @@ interface INormalizedColor {
 }
 
 export default Vue.extend({
-    name: 'colorizer-convert',
+    name: "colorizer-convert",
     data: (): IColorizerData => {
         return {
             input: "",
@@ -61,7 +61,7 @@ export default Vue.extend({
                 let trim = preHash ? input.substring(1) : input.substring(2);
                 let iVal: number;
                 if (trim.length == 3 && preHash) {
-                    trim = [...trim].map((v) => v + "" + v).join('');
+                    trim = [...trim].map((v) => v + "" + v).join("");
                 }
                 
                 iVal = parseInt(trim, 16);
@@ -122,7 +122,7 @@ export default Vue.extend({
     },
     methods: {
         toHexByte(n: number): string {
-            return ('00' + n.toString(16)).slice(-2);
+            return ("00" + n.toString(16)).slice(-2);
         },
         toNiceFloat(n: number): string {
             return n.toLocaleString(undefined, {

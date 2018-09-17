@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 
 export interface IAsciiConvertData {
 
@@ -39,7 +39,7 @@ export interface IAsciiConvertData {
 }
 
 export default Vue.extend({
-    name: 'ascii-convert',
+    name: "ascii-convert",
     data: (): IAsciiConvertData => {
         return {
             text: "",
@@ -64,7 +64,7 @@ export default Vue.extend({
 
             let operator: (n: number) => string;
             if (toHex) {
-                operator = (n) => ('00' + n.toString(16)).slice(-2);
+                operator = (n) => ("00" + n.toString(16)).slice(-2);
             } else {
                 operator = (n) => n.toString();
             }

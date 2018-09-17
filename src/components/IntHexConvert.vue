@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 
 export interface IIntHexData {
     input: string;
@@ -39,7 +39,7 @@ export interface IIntHexData {
 }
 
 export default Vue.extend({
-    name: 'int-hex-convert',
+    name: "int-hex-convert",
     data(): IIntHexData {
         return {
             input: "",
