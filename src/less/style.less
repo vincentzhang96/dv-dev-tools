@@ -1,0 +1,47 @@
+@import "constants.less";
+
+body {
+    background-color: @dv-c-background;
+    color: @dv-c-body;
+    font-family: @dv-f-lato;
+    font-weight: normal;
+}
+
+h1, h2, h3, h4 {
+    font-weight: lighter;
+    letter-spacing: 0.025em;
+    font-variant: small-caps;
+    color: @dv-c-foreground;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: @dv-c-accent-1;
+    cursor: pointer;
+    transition: color 0.125s ease-in;
+
+    &:hover {
+        color: @dv-c-accent-2;
+    }
+}
+
+.fixed-width {
+    font-family: Consolas, 'Lucida Console', monospace;
+}
