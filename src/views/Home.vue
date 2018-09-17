@@ -43,21 +43,21 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Card from '@/components/Card.vue';
-import FloatHexConvert from '@/components/FloatHexConvert.vue';
-import IntHexConvert from '@/components/IntHexConvert.vue';
-import AsciiConvert from '@/components/AsciiConvert.vue';
-import Colorizer from '@/components/Colorizer.vue';
+import Vue from "vue";
+import Card from "@/components/Card.vue";
+import FloatHexConvert from "@/components/FloatHexConvert.vue";
+import IntHexConvert from "@/components/IntHexConvert.vue";
+import AsciiConvert from "@/components/AsciiConvert.vue";
+import Colorizer from "@/components/Colorizer.vue";
 
 export default Vue.extend({
-  name: 'home',
+  name: "home",
   components: {
     Card,
     FloatHexConvert,
     IntHexConvert,
     AsciiConvert,
-    'colorizer-convert': Colorizer,
+    "colorizer-convert": Colorizer,
   },
 });
 </script>
