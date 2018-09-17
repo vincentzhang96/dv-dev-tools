@@ -47,15 +47,15 @@ export default Vue.extend({
     },
     computed: {
         parsed(): INormalizedColor {
-            let input = this.input;
-            let ret: INormalizedColor = {
+            const input = this.input;
+            const ret: INormalizedColor = {
                 red: 0,
                 green: 0,
                 blue: 0,
             };
 
-            let preHexO = input.startsWith("0x");
-            let preHash = input.startsWith("#");
+            const preHexO = input.startsWith("0x");
+            const preHash = input.startsWith("#");
 
             if (preHexO || preHash) {
                 let trim = preHash ? input.substring(1) : input.substring(2);
@@ -78,7 +78,7 @@ export default Vue.extend({
         },
         hexARGB(): string {
             let ret = "";
-            let c = this.parsed;
+            const c = this.parsed;
             if (c.alpha != null) {
                 ret = this.toHexByte(c.alpha);
             }
@@ -86,12 +86,12 @@ export default Vue.extend({
             return "0x" + ret + this.toHexByte(c.red) + this.toHexByte(c.green) + this.toHexByte(c.blue);
         },
         hashRGB(): string {
-            let c = this.parsed;
+            const c = this.parsed;
 
             return "#" + this.toHexByte(c.red) + this.toHexByte(c.green) + this.toHexByte(c.blue);
         },
         rgbTriplet(): string {
-            let c = this.parsed;
+            const c = this.parsed;
             let body = c.red + ", " + c.green + ", " + c.blue;
             if (c.alpha != null) {
                 body += ", " + c.alpha;
@@ -100,7 +100,7 @@ export default Vue.extend({
             return body;
         },
         cssRgbTriplet(): string {
-            let c = this.parsed;
+            const c = this.parsed;
             let prefix = "rgb";
             let body = "(" + c.red + ", " + c.green + ", " + c.blue;
             if (c.alpha != null) {
@@ -111,7 +111,7 @@ export default Vue.extend({
             return prefix + body + ")";
         },
         rgbFloat(): string {
-            let c = this.parsed;
+            const c = this.parsed;
             let body = this.toNiceFloat(c.red / 255) + ", " + this.toNiceFloat(c.green / 255) + ", " + this.toNiceFloat(c.blue / 255);
             if (c.alpha != null) {
                 body += ", " + this.toNiceFloat(c.alpha / 255);

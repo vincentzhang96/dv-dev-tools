@@ -71,10 +71,10 @@ export default Vue.extend({
     },
     methods: {
         swapHexPairs(val: string): string {
-                let a = val.substr(0, 2);
-                let b = val.substr(2, 2);
-                let c = val.substr(4, 2);
-                let d = val.substr(6, 2);
+                const a = val.substr(0, 2);
+                const b = val.substr(2, 2);
+                const c = val.substr(4, 2);
+                const d = val.substr(6, 2);
                 return d + c + b + a;
         },
         toInt(value: string, littleEndian: boolean, unsigned: boolean): number {

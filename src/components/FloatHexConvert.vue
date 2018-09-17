@@ -71,10 +71,10 @@ export default Vue.extend({
     },
     methods: {
         swapHexPairs(val: string): string {
-                let a = val.substr(0, 2);
-                let b = val.substr(2, 2);
-                let c = val.substr(4, 2);
-                let d = val.substr(6, 2);
+                const a = val.substr(0, 2);
+                const b = val.substr(2, 2);
+                const c = val.substr(4, 2);
+                const d = val.substr(6, 2);
                 return d + c + b + a;
         },
         toFloat(value: string, littleEndian: boolean): number {
@@ -90,12 +90,12 @@ export default Vue.extend({
                 padVal = padVal.padStart(8, "0");
             }
 
-            let rawVal = Number.parseInt(padVal, 16);
+            const rawVal = Number.parseInt(padVal, 16);
 
-            let sign = (rawVal >>> 31) ? -1 : 1;
+            const sign = (rawVal >>> 31) ? -1 : 1;
             let exp = (rawVal >>> 23 & 0xFF) - 127;
 
-            let mant = ((rawVal & 0x7FFFFF) + 0x800000).toString(2);
+            const mant = ((rawVal & 0x7FFFFF) + 0x800000).toString(2);
 
             // Check for +/-Inf, NaN
             if ((rawVal >>> 23 & 0xFF) == 0xFF) {
@@ -116,7 +116,7 @@ export default Vue.extend({
         },
         toHex(value: number, littleEndian: boolean): string {
             const toHex = (i: number) => ("00" + i.toString(16)).slice(-2);
-            let view = new DataView(new ArrayBuffer(4));
+            const view = new DataView(new ArrayBuffer(4));
             view.setFloat32(0, value);
 
             let hex = Array.apply(null, { length: 4 })

@@ -60,7 +60,7 @@ export default Vue.extend({
         convertToAscii(input: string, toHex: boolean): string {
             const toAscii = (a: string): number => a.charCodeAt(0);
 
-            let breakdown = [...input].map(toAscii);
+            const breakdown = [...input].map(toAscii);
 
             let operator: (n: number) => string;
             if (toHex) {
