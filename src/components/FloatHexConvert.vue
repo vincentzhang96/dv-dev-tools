@@ -98,8 +98,8 @@ export default Vue.extend({
             const mant = ((rawVal & 0x7FFFFF) + 0x800000).toString(2);
 
             // Check for +/-Inf, NaN
-            if ((rawVal >>> 23 & 0xFF) == 0xFF) {
-                if ((rawVal & 0x7FFFFF) == 0) {
+            if ((rawVal >>> 23 & 0xFF) === 0xFF) {
+                if ((rawVal & 0x7FFFFF) === 0) {
                     return sign * Infinity;
                 }
 
@@ -107,8 +107,8 @@ export default Vue.extend({
             }
 
             let f = 0;
-            for (let i = 0; i < mant.length; ++i) {
-                f += parseInt(mant[i], 10) ? Math.pow(2, exp) : 0;
+            for (const i of mant) {
+                f += parseInt(i, 10) ? Math.pow(2, exp) : 0;
                 --exp;
             }
 

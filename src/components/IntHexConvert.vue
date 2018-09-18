@@ -92,7 +92,7 @@ export default Vue.extend({
 
             let ret = Number.parseInt(padVal, 16);
 
-            if (!unsigned && (ret & 0x80000000) != 0) {
+            if (!unsigned && (ret & 0x80000000) !== 0) {
                 ret = -(0xFFFFFFFF - ret + 1);
             }
 

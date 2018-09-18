@@ -60,7 +60,7 @@ export default Vue.extend({
             if (preHexO || preHash) {
                 let trim = preHash ? input.substring(1) : input.substring(2);
                 let iVal: number;
-                if (trim.length == 3 && preHash) {
+                if (trim.length === 3 && preHash) {
                     trim = [...trim].map((v) => v + "" + v).join("");
                 }
                 
@@ -69,7 +69,7 @@ export default Vue.extend({
                 ret.green = (iVal >> 8) & 0xFF;
                 ret.blue = (iVal & 0xFF);
 
-                if (trim.length == 8) {
+                if (trim.length === 8) {
                     ret.alpha = (iVal >> 24) & 0xFF;
                 }
             }
@@ -112,7 +112,9 @@ export default Vue.extend({
         },
         rgbFloat(): string {
             const c = this.parsed;
-            let body = this.toNiceFloat(c.red / 255) + ", " + this.toNiceFloat(c.green / 255) + ", " + this.toNiceFloat(c.blue / 255);
+            let body = this.toNiceFloat(c.red / 255) + ", " +
+                this.toNiceFloat(c.green / 255) + ", " +
+                this.toNiceFloat(c.blue / 255);
             if (c.alpha != null) {
                 body += ", " + this.toNiceFloat(c.alpha / 255);
             }
