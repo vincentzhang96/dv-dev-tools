@@ -26,8 +26,9 @@
     </Card>
     <Card>
       <template slot="head">
-        <h3>Test card</h3>
+        <h3>MD5 Hash</h3>
       </template>
+      <md5-hash/>
     </Card>
     <Card>
       <template slot="head">
@@ -49,6 +50,7 @@ import FloatHexConvert from "@/components/FloatHexConvert.vue";
 import IntHexConvert from "@/components/IntHexConvert.vue";
 import AsciiConvert from "@/components/AsciiConvert.vue";
 import Colorizer from "@/components/Colorizer.vue";
+import Md5Hasher from "@/components/Md5Hasher.vue";
 
 export default Vue.extend({
   name: "home",
@@ -58,6 +60,7 @@ export default Vue.extend({
     IntHexConvert,
     AsciiConvert,
     "colorizer-convert": Colorizer,
+    "md5-hash": Md5Hasher,
   },
 });
 </script>
